@@ -402,16 +402,20 @@ input[type=submit]:active{
     padding-left:40px;
 }
 
+
 table, th, td{
-    border: thin solid rgba(0, 51, 102, 1);
+    border: 1px solid rgba(0, 51, 102, 1);
     font-family: sans-serif;
     color:rgba(242,243,244, 0.9);
 
 }
 
 table{
+    border-collapse: collapse;
     background-color:rgba(0, 51, 102, 0.3);
+    padding: 0.25rem;
     margin: 20px;
+    font-size: 100%;
 }
 tr:hover{
     background-color:rgba(0, 51, 102, 0.3);
