@@ -2,7 +2,6 @@
     box-sizing:border-box;
     margin:0;
     padding:0;
-    /* transition:all linear 2S; */
 }
 
 
@@ -10,9 +9,8 @@
     display:table;
     width:100%;
     height:100%;
-    /* table-layout: fixed; */
     border-collapse:separate;
-    /* border-spacing:1%; */
+    border-spacing:2%;
 }
 
 .yellow__block {
@@ -33,14 +31,26 @@
 
 td.green {
     width:100px;
+    padding:0;
+}
+
+
+td.green:last-child{
+    padding:40px 0 0 0;
+}
+
+
+div{
+    width:100px;
     border:medium solid green;
 }
 
- .pink{
+.pink{
     height:100%;
     width:auto;
     border:medium solid pink;
  }
+ 
  
 
 
