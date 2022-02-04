@@ -10,13 +10,13 @@
     display:table;
     width:100%;
     height:100%;
-    table-layout: fixed;
+    /* table-layout: fixed; */
     border-collapse:separate;
-    border:1%;
+    /* border-spacing:1%; */
 }
 
 .yellow__block {
-    width:auto;
+    width:33.3333%;
     height:100%;
     border:medium solid orange;
 }
@@ -31,17 +31,19 @@
 }
 
 
-.green {
+td.green {
     width:100px;
     border:medium solid green;
 }
 
  .pink{
     height:100%;
-    width:100%;
+    width:auto;
     border:medium solid pink;
  }
  
+
+
 
 
 
