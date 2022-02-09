@@ -91,7 +91,7 @@ h2, h3, h4, p, ul, ol, li{
 .links{
     display:flex;
     flex:2.5;
-    padding-left:15px;
+    padding-left:5%;
     align-self: center;
     border-bottom:5px solid rgba(0, 51, 102, 0.9);
 }
@@ -124,26 +124,6 @@ h2, h3, h4, p, ul, ol, li{
 
 .link:last-child{
     margin-right:0
-}
-
-@media screen and (max-width:600px) {
-
-    .header__help{
-        display:flex;
-        justify-content: space-between;
-    }
-
-    .header__main{
-        justify-content: flex-start;
-    }
-
-    .logo{
-        margin:10px;
-    }
-    
-    .links{
-        display:none;
-    }
 }
 
 
@@ -270,6 +250,63 @@ ol > li{
         left: 40px;
     }
 
+}
+
+/* Калькулятор */
+.calc{
+    display:flex;
+    flex-direction:column;
+    gap:2%;
+    width:30%;
+    margin:auto;
+}
+
+.calc__btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin:2% 0;
+    align-content: center;
+}
+
+.button {
+    width: 15%;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#res{
+    width:25%;
+    padding:2%;
+
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:stretch;
+    align-content: center;
+    margin-top: 2%;
+    
+}
+
+#result{
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.num{
+    -moz-appearance: textfield;
+}
+
+.num::-webkit-inner-spin-button { 
+    display: none;
+}
+
+.btn__active{
+    background-color: grey;
 }
 
 /* Форма */
