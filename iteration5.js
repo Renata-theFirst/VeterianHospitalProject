@@ -1,6 +1,6 @@
 
 class DocCard {
-    constructor(src,name, qualification) {
+    constructor(src, name, qualification) {
         this.src = src;
         this.name = name;
         this.qualification = qualification;
@@ -20,12 +20,12 @@ class DocCard {
         `;
         this.parent.append(card);
     }
-    
 }
 
 class Director extends DocCard {
-    constructor(src,name, qualification){
-        super(src, name, qualification);
+    constructor(name, qualification){
+        super(name, qualification);
+        this.src = this.src ? this.src : './pics/doctors/noImage.jpg';
         this.parent = document.querySelector(".hosp__manag");
     }
 }
@@ -83,10 +83,10 @@ const docs = [
         'Мазманян Д.А.',
         'Анестезиолог/Реаниматолог',
     ],
-
+    
 ]
 
 docs.forEach((item) => {
-   new DocCard(...item).render();
+    new DocCard(...item).render();
 })
 
