@@ -464,11 +464,27 @@ th{
 
 
 /* Страница специалистов */
+.hosp__docs_header{
+    font-size: 200%;
+    color: rgba(0, 51, 102, 1);
+    text-align:center;
+    text-shadow: 10px 8px 5px rgba(0, 0, 0, 0.35);
+}
+
+.hosp__docs_wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5%;
+}
+
 .hosp__docs{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 80%;
+    align-content: space-around;
+    row-gap:20px;
 }
 
 .hosp__manag{
@@ -476,11 +492,17 @@ th{
     flex-direction: column;
     justify-content: center;
     width:20%;
+    row-gap:20px;
 }
 
-.hosp__docs.img{
-    width:250px;
+.hosp__docs_img{
+    max-width:250px;
+    max-height:400px;
 
+}
+
+.hosp__docs_name{
+    margin:0 auto;
 }
 
 .hosp__doc{
