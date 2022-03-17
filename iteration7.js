@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', () =>{
     
-    // let response = fetch('https://api.github.com/users/defunkt');
-    // if (!response.ok) {
-    //     console.log(response.body);
-    // }
+    fetch('https://avatars.githubusercontent.com/u/2?v=4')
+    .then(response => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+        return response.blob();
+    }
+    })
+    .then(photo => {
+    let place = document.getElementById("repos");
+    console.log(place);
+    let src = URL.createObjectURL(photo);
+    place.innerHTML = `<img src = ${src}>`;
+    })
+    .catch(e => {
+    console.log('There was a problem with fetch: ' + e.message);
+    });
+    
 
     (async () => {
         try {
@@ -23,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () =>{
                 let update = el.updated_at;
                 let description = el.description;
                 
-                repos.innerHTML += `<h5>${name}</h5>
+                repos.innerHTML += `<h3 >${name}</h3>
                                 <p>Ссылка на репозиторий: <a href="https://github.com/${name}">https://github.com/${name}</a> <br/>
                                 Описание: ${description} <br/>
-                                Последнее обновление: ${update}</p> <br>` ;
+                                Последнее обновление: ${update}</p><br>` ;
             }
         }
         catch(err) { console.log('err:', err); }
