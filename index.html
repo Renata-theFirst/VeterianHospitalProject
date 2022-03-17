@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="keywords" content="ветеринарная клиника, ветеринарная помощь, ветеринарный центр, ветеринарная служба, happypet, happy pet, хэппи пэт, хэппипэт "/>
         <meta name="description" content="HappyPet оказывает полный спектр ветеринарных услуг от диагностики до лечения, а также медицинского сопровождения питомцев любого вида, веса и возраста."/>
-        <base href="./"/>
+        <!-- <base href="./"/> -->
         <link rel="stylesheet" href="style.css" />
         <script src="script.js"></script>
         <script src="anotherScript.js"></script>
@@ -183,7 +183,7 @@
             <div class="form__container-right">
                 <h2>Напишите нам:</h2>
 
-                <form action="###">
+                <form action="###" id="feedback">
                     <div class="form__row">
                         <label for="guestName">
                             Ваше имя:
@@ -221,11 +221,15 @@
                     </div>
 
                     <div class="form__row">
-                        <input type="Submit" value="Отправить"/>
+                        <input type="Submit" value="Отправить" id="formSubmit"/>
                     </div>
     
                 </form>
             </div>
+        </div>
+
+        <!-- Страница с репозиториями пользователей GitHub -->
+        <div class="repos_user" id="repos">
         </div>
         
         <!--/*Страница с услугами*/-->
@@ -5604,7 +5608,7 @@
 
         <!-- Страница со специалистами -->
 
-        <div>
+        <div hidden>
             <h2 class="hosp__docs_header">Врачи нашей клиники</h2> 
             <div class="hosp__docs_wrapper">
                 <div class="hosp__docs">
@@ -5618,8 +5622,17 @@
         
 
         <!-- Конец страницы со специалистами -->
+        <!-- Страница новостей -->
+
+        <!-- <div class="news__arrows">
+            <img src="./pics/icons/ArrowLeft.png" alt="arrow__right">
+            <img src="./pics/icons/ArrowRight.png" alt="arrow__right">
+        </div> -->
+        <!-- Конец страницы новостей -->
         
         <script src="iteration5.js"></script>
+        <script src="iteration6.js"></script>
+        <script src="iteration7.js"></script>
     </body>
     
     <footer>

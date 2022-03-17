@@ -516,6 +516,16 @@ th{
     padding: 10px;
 }
 
+/* Страница новостей */
+.news__arrows{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+
+
+
 
 /* Подвал приложения*/
 
@@ -563,4 +573,13 @@ footer{
     }
 
     
+}
+
+.repos_user {
+    display:flex;
+    width: 70%;
+    align-items:center;
+    flex-direction: column;
+    background-color:#B5D1E2;
+    color:rgba(0, 51, 102, 1);
 }
