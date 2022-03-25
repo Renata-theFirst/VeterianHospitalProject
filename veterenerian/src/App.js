@@ -1,15 +1,16 @@
-document.addEventListener('DOMContentLoaded', () =>{
+import './App.css';
 
-    const tel = document.getElementById('guestTel');
+const App = () => {
+    // const tel = document.getElementById('guestTel');
 
-    tel.onfocus = function() {
-        tel.addEventListener('keydown', CheckValue);
-    }
+    // tel.onfocus = function() {
+    //     tel.addEventListener('keydown', CheckValue);
+    // }
     
-    function CheckValue(e) {
-        console.log(e.key);
-        this.value = this.value.replace(/[^\d && ^\+ && ^\- && ^\( && ^\) ]/g, '');
-    }
+    // function CheckValue(e) {
+    //     console.log(e.key);
+    //     this.value = this.value.replace(/[^\d && ^\+ && ^\- && ^\( && ^\) ]/g, '');
+    // }
 
     const logo = document.getElementById('logo');
 
@@ -24,4 +25,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     logo.addEventListener('click', (e) => {
         window.location.href = '###/main'
     });
-});
+}
+
+export default App;
+
