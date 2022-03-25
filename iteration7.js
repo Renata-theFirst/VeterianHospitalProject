@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     .catch(e => {
     console.log('There was a problem with fetch: ' + e.message);
     });
-    
+
 
     (async () => {
         try {
@@ -45,8 +45,4 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
         catch(err) { console.log('err:', err); }
      })();
-
-        
-     
-
 });

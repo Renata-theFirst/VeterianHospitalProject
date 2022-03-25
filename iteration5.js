@@ -31,15 +31,15 @@ class Director extends DocCard {
 }
 
 new Director(
-    './pics/doctors/surgeon.jpg',
+   './pics/doctors/surgeon.jpg',
     'Соколовский А.В.',
-    'Главный врач/Хирург'
+    'Главный врач/Хирург',
 ).render();
 
 new Director(
     './pics/doctors/doc.jpg',
     'Сарычева Ю.В.',
-    'Заместитель главного врача/Терапевт'
+    'Заместитель главного врача/Терапевт',
 ).render();
 
 const docs = [
