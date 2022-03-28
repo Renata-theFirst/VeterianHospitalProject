@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () =>{
+const Calc = () =>{
 
     const options = document.querySelectorAll(".button");
 
@@ -56,4 +56,54 @@ document.addEventListener('DOMContentLoaded', () =>{
         ClearClass();
     };
 
-});
+    return(
+        <div class="calc">
+            <label for="num1">Введите число 1:</label>
+            <input type="number"  class="num" id="num1" required/>
+
+            <label for="calc__btns">Выберите действие:</label>
+            <div class="calc__btns">
+                <input 
+                    type="button" 
+                    class="button"
+                    id="plus" 
+                    value="+"
+                />
+                <input 
+                    type="button" 
+                    class="button"
+                    id="minus" 
+                    value="-"
+                />
+                <input 
+                    type="button" 
+                    class="button"
+                    id="times" 
+                    value="x"
+                />
+                <input 
+                    type="button" 
+                    class="button"
+                    id="divide" 
+                    value="/"
+                />
+            </div>
+
+            <label for="num2">Введите число 2:</label>
+            <input type="number" class="num" id="num2" required/>
+
+            <div class="result">
+                <input 
+                    type="button" 
+                    id="res" 
+                    value="Посчитать"
+                />
+                <div id="result">
+                    
+                </div>
+            </div>
+            
+        </div>
+    )
+
+}

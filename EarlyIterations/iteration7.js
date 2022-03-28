@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () =>{
+
+const GitHubUser = () =>{
     
     fetch('https://avatars.githubusercontent.com/u/2?v=4')
     .then(response => {
@@ -45,4 +46,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
         catch(err) { console.log('err:', err); }
      })();
-});
+
+     return(
+        <div class="repos_user" id="repos">
+        </div>
+     );
+}

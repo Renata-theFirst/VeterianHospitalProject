@@ -1,0 +1,112 @@
+.form__container{
+    display:flex;
+    flex-wrap: no-wrap;
+    justify-content: space-evenly;
+    align-items:center;
+    width: 100%;
+    padding:50px 15px;
+}
+
+.form__container::after{
+    display: table;
+    content:"";
+    clear: both;
+}
+
+.form__container-left{
+    width:40%;
+    float:left;
+}
+
+.form__container-right{
+    background: rgba(242,243,244, 0.5);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25);
+    border-radius:10px;
+    margin-left:-10%;
+    padding:2%;
+    width:49.9999%;
+    float:right;
+    z-index: 1;
+    color: rgba(0, 51, 102, 1);
+    font-family: sans-serif;
+}
+
+.form__container-left img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+input[type=text], input[type=tel]{
+    width:50%;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius:5px;
+}
+
+input[type=text]:focus, input[type=tel]:focus{
+    outline: 2px solid rgba(0, 51, 102, 0.8);
+}
+
+#guestMessage{
+    width:100%;
+    height:fit-content;
+}
+
+label{
+    display: block;
+    padding: 12px 12px 12px 0;
+    font-weight: bold;
+}
+
+input[type=submit]{
+    background-color:rgba(0, 51, 102, 0.7);
+    color: rgba(242,243,244, 1);
+    margin:5% 50% 0 30%;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:right;
+    font-weight: bold;
+    box-shadow:10px 8px 5px rgba(0, 0, 0, 0.35);
+}
+
+input[type=submit]:hover{
+    opacity: 80% ;
+}
+
+input[type=submit]:active{
+    box-shadow:10px 8px 5px rgba(0, 0, 0, 0.35) inset;
+};
+
+@media screen and (max-width:600px){
+    
+    .form__container {
+        justify-content: flex-end;
+        align-items:flex-end;
+        padding:2%;
+    }
+
+    .form__container-left {
+        display:block;
+        float: none;
+    }
+
+    .form__container-left img {
+        display:block;
+        position: absolute;
+        margin-left: 0;
+        margin-top:0;
+        z-index: -1;
+    }
+
+    .form__container-right {
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0;
+        float: none;
+    }
+}

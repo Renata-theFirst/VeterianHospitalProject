@@ -1,0 +1,40 @@
+footer{
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color:rgba(0, 51, 102, 1);
+    align-items:self-end;
+    color:rgba(242,243,244, 0.9);
+    font-size: small;
+}
+
+.info__contact{
+    text-decoration: underline;
+    font-size: 16px;
+    margin-bottom:5px;
+}
+
+.info__contact h4{
+    text-align: center;
+}
+
+.info img{
+    max-width:48px;
+    height:auto;
+}
+
+@media screen and (max-width:600px) {
+    footer {
+        padding: 1%;
+    }
+
+    .info__contact {
+        font-size: 100%;
+        margin-bottom: 1%;
+    }
+
+    .info {
+        display:flex;
+        flex-direction: column;
+    }
+}
