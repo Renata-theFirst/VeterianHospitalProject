@@ -1,27 +1,36 @@
-document.addEventListener('DOMContentLoaded', () =>{
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Main from './components/main.jsx';
 
-    const tel = document.getElementById('guestTel');
+ReactDOM.render(
+  <Main />,
+  document.getElementById('app')
+);
 
-    tel.onfocus = function() {
-        tel.addEventListener('keydown', CheckValue);
-    }
+// document.addEventListener('DOMContentLoaded', () =>{
+
+//     const tel = document.getElementById('guestTel');
+
+//     tel.onfocus = function() {
+//         tel.addEventListener('keydown', CheckValue);
+//     }
     
-    function CheckValue(e) {
-        console.log(e.key);
-        this.value = this.value.replace(/[^\d && ^\+ && ^\- && ^\( && ^\) ]/g, '');
-    }
+//     function CheckValue(e) {
+//         console.log(e.key);
+//         this.value = this.value.replace(/[^\d && ^\+ && ^\- && ^\( && ^\) ]/g, '');
+//     }
 
-    const logo = document.getElementById('logo');
+//     const logo = document.getElementById('logo');
 
-    logo.addEventListener('mouseenter', (e) => {
-        logo.style.filter = 'drop-shadow(0 0 0.75rem rgba(0, 51, 102, 0.5))';
-    });
+//     logo.addEventListener('mouseenter', (e) => {
+//         logo.style.filter = 'drop-shadow(0 0 0.75rem rgba(0, 51, 102, 0.5))';
+//     });
 
-    logo.addEventListener('mouseleave', (e) => {
-        logo.style.filter = 'drop-shadow(0 0 0)';
-    });
+//     logo.addEventListener('mouseleave', (e) => {
+//         logo.style.filter = 'drop-shadow(0 0 0)';
+//     });
 
-    logo.addEventListener('click', (e) => {
-        window.location.href = '###/main'
-    });
-});
+//     logo.addEventListener('click', (e) => {
+//         window.location.href = '###/main'
+//     });
+// });
