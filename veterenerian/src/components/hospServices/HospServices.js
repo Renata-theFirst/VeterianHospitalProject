@@ -2,7 +2,7 @@ import './HospServices.css';
 
 const HospServices = () => {
     return(
-        <div className="hosp__services" hidden>
+        <div className="hosp__services">
             <div className="services">
                 <h2>Хирургия</h2>
                 <div>

@@ -7,7 +7,6 @@ import GuestMessage from '../formLines/GuestMessage';
 const Feedback = () => {
     
     function formFill() {
-        
         if(localStorage.length > 0) {
             const key = localStorage.key(0);
             document.getElementById("guestName").value = key;
@@ -38,7 +37,7 @@ const Feedback = () => {
                     <GuestTel />
                     <GuestMessage />
                     <div className="form__row">
-                        <input type="Submit" value="Отправить" id="formSubmit" onSubmit={submitMessage}/>
+                        <input type="Submit" value="Отправить" id="formSubmit" onSubmit={() => submitMessage}/>
                     </div>
                 </form>
             </div>

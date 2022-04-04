@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import './AppHeader.css';
 import hours from './appHeaderPics&Logo/24.png';
 import logotype from './appHeaderPics&Logo/Logo.png';
+import PageLinks from '../pagesLinks/PageLinks';
 
 const AppHeader = () => {
     useEffect(() => {
@@ -15,7 +16,7 @@ const AppHeader = () => {
         });
 
         logo.addEventListener('click', (e) => {
-            window.location.href = '###/main'
+            window.location.href = '/main';
         });
     });
 
@@ -41,13 +42,7 @@ const AppHeader = () => {
                 <div className="logo">
                     <img src={logotype} alt="logotype" id="logo"/>
                 </div>
-        
-                <div className="links">
-                    <a href="###" className="link active">Главная</a>
-                    <a href="###" className="link">Услуги и цены</a>
-                    <a href="###" className="link">Специалисты</a>
-                    <a href="###" className="link">Новости</a>
-                </div>
+                <PageLinks/>
             </div>
         </header>
     );

@@ -1,7 +1,7 @@
 import './Footer.css';
-// import fb from './icons/facebook.svg';
-// import inst from './icons/instagram.svg';
-// import vk from './icons/vk.svg';
+import fb from './icons/facebook.svg';
+import inst from './icons/instagram.svg';
+import vk from './icons/vk.svg';
 
 
 const Footer = () => {
@@ -21,24 +21,20 @@ const Footer = () => {
             </div>
             
             <div className="info">
-
                 <a href="https://www.facebook.com/">
-                    {/* <img src={fb}/> */}
+                    <img src={fb} alt="facebook"/>
                 </a>
-
                 <a href="https://www.instagram.com/">
-                    {/* <img  src={inst}/> */}
+                    <img  src={inst} alt="instagram"/>
                 </a>
-
                 <a href="https://www.vkontakte.ru/">
-                    {/* <img src={vk}/> */}
+                    <img src={vk} alt="vkontakte"/>
                 </a>
             </div>
 
             <div className="info">
                 <div>
                     <h4 className="info__contact">Контакты</h4>
-
                     <p>
                         <b>Телефон:</b>8(4872)35-33-36
                         <br/>

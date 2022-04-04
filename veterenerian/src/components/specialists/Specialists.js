@@ -1,47 +1,30 @@
-import './Specialists.css';
-
-// class DocCard {
-//     constructor(src, name, qualification) {
+// import React from 'react';
+// class DocCard extends React.Component {
+//     constructor(src, docName, qualification) {
+//         super(props)
 //         this.src = src;
-//         this.name = name;
+//         this.docName = docName;
 //         this.qualification = qualification;
-//         this.parent = document.querySelector(".hosp__docs");
+//         parent = document.querySelector(".hosp__docs");
 //     }
 
 //     render() {
 //         const card = document.createElement('div');
-//         card.innerHTML = `
-//             <div class="hosp__doc">
-//                 <img  src = ${this.src}  class = "hosp__docs_img" alt="photo">
-//                 <div class = "hosp__doc-container">
-//                     <h3 class = "hosp__docs_name">${this.name}</h3>
-//                     ${this.qualification}
-//                 </div>
-//             </img>
-//         `;
 //         this.parent.append(card);
+//         return(
+//             card.innerHTML = `
+//                 <div class="hosp__doc">
+//                     <img  src = ${this.src}  class = "hosp__docs_img" alt="photo" />
+//                     <div class = "hosp__doc-container">
+//                         <h3 class = "hosp__docs_name">${this.docName}</h3>
+//                         ${this.qualification}
+//                     </div>
+//                 </div>
+//             `
+//         );
+        
 //     }
-// }
-
-// class Director extends DocCard {
-//     constructor(name, qualification){
-//         super(name, qualification);
-//         this.src = this.src ? this.src : './pics/doctors/noImage.jpg';
-//         this.parent = document.querySelector(".hosp__manag");
-//     }
-// }
-
-// new Director(
-//    './pics/doctors/surgeon.jpg',
-//     'Соколовский А.В.',
-//     'Главный врач/Хирург',
-// ).render();
-
-// new Director(
-//     './pics/doctors/doc.jpg',
-//     'Сарычева Ю.В.',
-//     'Заместитель главного врача/Терапевт',
-// ).render();
+// };
 
 // const docs = [
 //     [
@@ -92,19 +75,19 @@ import './Specialists.css';
 // })
 
 
-const Specialists = () => {
+// const Specialists = () => {
 
-    return(
-        <div hidden>
-            <h2 class="hosp__docs_header">Врачи нашей клиники</h2> 
-            <div class="hosp__docs_wrapper">
-                <div class="hosp__docs">
-                </div>
+//     return(
+//         <div hidden>
+//             <h2 class="hosp__docs_header">Врачи нашей клиники</h2> 
+//             <div class="hosp__docs_wrapper">
+//                 <div class="hosp__docs">
+//                 </div>
     
-                <div class="hosp__manag">
-                </div>
-            </div>
-        </div>
-    );
-}
-export default Specialists;
+//                 <div class="hosp__manag">
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+// export default Specialists;

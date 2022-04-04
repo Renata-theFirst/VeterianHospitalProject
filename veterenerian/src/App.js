@@ -1,25 +1,24 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import AppHeader from './components/appHeader/AppHeader';
-import MainInfo from './components/mainInfo/MainInfo';
-import Promo from './components/promo/Promo';
-import Feedback from './components/feedback/FeedbackForm';
+import MainPage from './components/pagesLinks/mainPage';
 import Footer from './components/footer/Footer';
 import HospServices from './components/hospServices/HospServices';
-import Specialists from './components/specialists/Specialists';
-import News from './components/news/News';
+import Specialists from './components/specialists/Specialists.js';
+import News from './components/news/index';
 
 const App = () => {
     return(
-        <>
+        <Router>
             <AppHeader />
-            <Promo />
-            <MainInfo />
-            <Feedback />
-            <HospServices />
-            <Specialists />
-            <News />
+            <Routes>
+                <Route path="/main" element={<MainPage/>}/>
+                <Route path="/price" element={<HospServices />}/>
+                {/* <Route path="/specialists" element={<Specialists />}/> */}
+                <Route path="/news" element={<News />}/>
+            </Routes>
             <Footer />
-        </>
+        </Router>
     );
 }
 
