@@ -1,30 +1,46 @@
 // import React from 'react';
-// class DocCard extends React.Component {
-//     constructor(src, docName, qualification) {
-//         super(props)
+// class DocCard {
+//     constructor(src, name, qualification) {
 //         this.src = src;
-//         this.docName = docName;
+//         this.name = name;
 //         this.qualification = qualification;
-//         parent = document.querySelector(".hosp__docs");
+//         this.parent = document.querySelector(".hosp__docs");
 //     }
 
 //     render() {
 //         const card = document.createElement('div');
-//         this.parent.append(card);
-//         return(
-//             card.innerHTML = `
-//                 <div class="hosp__doc">
-//                     <img  src = ${this.src}  class = "hosp__docs_img" alt="photo" />
-//                     <div class = "hosp__doc-container">
-//                         <h3 class = "hosp__docs_name">${this.docName}</h3>
-//                         ${this.qualification}
-//                     </div>
+//         card.innerHTML = `
+//             <div class="hosp__doc">
+//                 <img  src = ${this.src}  class = "hosp__docs_img" >
+//                 <div class = "hosp__doc-container">
+//                     <h3 class = "hosp__docs_name">${this.name}</h3>
+//                     ${this.qualification}
 //                 </div>
-//             `
-//         );
-        
+//             </img>
+//         `;
+//         this.parent.append(card);
 //     }
-// };
+// }
+
+// class Director extends DocCard {
+//     constructor(name, qualification){
+//         super(name, qualification);
+//         this.src = this.src ? this.src : './pics/doctors/noImage.jpg';
+//         this.parent = document.querySelector(".hosp__manag");
+//     }
+// }
+
+// new Director(
+//    './pics/doctors/surgeon.jpg',
+//     'Соколовский А.В.',
+//     'Главный врач/Хирург',
+// ).render();
+
+// new Director(
+//     './pics/doctors/doc.jpg',
+//     'Сарычева Ю.В.',
+//     'Заместитель главного врача/Терапевт',
+// ).render();
 
 // const docs = [
 //     [
@@ -73,21 +89,4 @@
 // docs.forEach((item) => {
 //     new DocCard(...item).render();
 // })
-
-
-// const Specialists = () => {
-
-//     return(
-//         <div hidden>
-//             <h2 class="hosp__docs_header">Врачи нашей клиники</h2> 
-//             <div class="hosp__docs_wrapper">
-//                 <div class="hosp__docs">
-//                 </div>
-    
-//                 <div class="hosp__manag">
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 // export default Specialists;

@@ -1,24 +1,30 @@
+import './News.css'
 import React from 'react';
-import ReactDOM from 'react-router-dom'; 
+ 
 
-import './News.css';
-
-class NewArticle extends React.Component {
+class News extends React.Component {
     constructor(props){
         super(props);
-    //     // this.article = 'абра-кадабра';
-    //     // this.date = date;
-     }
-    render() {
-        return React.createElement('p', this.props.who, null);
+        this.article = article;
     }
-}
+    
+    render(){
+        return React.createElement('div', {className: "news"},  
+            React.createElement('div',{className: "news__item"}, this.article));
+    }
+};
 
-ReactDOM.render(
-    React.createElement(NewArticle, {who:'Hello'}, null),
-    document.getElementById('news')
-);
+const article = [
+    'бла-бла-бла-бла', 
+    'тра-ля-ля',
+];
 
+
+article.forEach((elem) => {
+    new News(...elem).render()
+});
+
+export default News;
 
 
 
