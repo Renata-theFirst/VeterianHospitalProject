@@ -1,4 +1,6 @@
-const GuestMessage = () => {
+const GuestMessage = (props) => {
+    const {guestMessage, inputChangedHandler} = props;
+
     return(
         <div className="form__row">
             <label for="guestMessage">
@@ -7,6 +9,8 @@ const GuestMessage = () => {
             <input 
                 type="text" 
                 id="guestMessage" 
+                value = {guestMessage}
+                onChange = {inputChangedHandler}
                 placeholder="Ваше сообщение..."
             />
         </div>

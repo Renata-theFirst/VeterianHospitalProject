@@ -1,7 +1,41 @@
+import { getResource } from '../../services/services';
 import './HospServices.css';
 
 const HospServices = () => {
+    const data = getResource('surgeon/consultation')
+    console.log(data);
+    const renderValues = () => {
+        return(
+            <div className="services">
+                <h2>Хирургия</h2>
+                <div>
+                    <h3>{data.title}</h3>
+                    <div className="table__price">
+                        <table>
+                            <tr> {data.headers}
+                            </tr>
+                            <tr>
+                                <td>{data.values.title}</td>
+                                <td>{data.values.description}</td>
+                                <td>{data.values.cost}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+    
     return(
+        <div className="hosp__services">
+            {renderValues}
+        </div>
+
+    );
+
+    
+    
+  /*  return(
         <div className="hosp__services">
             <div className="services">
                 <h2>Хирургия</h2>
@@ -5368,6 +5402,6 @@ const HospServices = () => {
                 </div>
             </div>
         </div>
-    );
+    );*/
 }
 export default HospServices;

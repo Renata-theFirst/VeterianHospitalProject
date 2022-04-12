@@ -1,13 +1,5 @@
-const GuestTel = () => {
-    // const tel = document.getElementById('guestTel');
-    // tel.onfocus = function() {
-    //     tel.addEventListener('keydown', CheckValue);
-    // }
-    
-    // function CheckValue(e) {
-    //     console.log(e.key);
-    //     this.value = this.value.replace(/[^\d && ^\+ && ^\- && ^\( && ^\) ]/g, '');
-    // }
+const GuestTel = (props) => {
+    const {guestTel, inputChangedHandler} = props;
     return(
         <div className="form__row">
             <label for="guestTel">
@@ -16,7 +8,9 @@ const GuestTel = () => {
             <input 
                 type="tel" 
                 id="guestTel" 
-                placeholder="+7(XXX)XXX-XX-XX" 
+                onChange = {inputChangedHandler}
+                value={guestTel}
+                placeholder="8XXXXXXXXXX" 
                 required
             />
         </div>

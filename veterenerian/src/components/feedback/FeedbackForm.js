@@ -1,29 +1,54 @@
 import './FeedBackForm.css';
+import React, { useCallback, useEffect, useState } from 'react';
 import smartDog from './dogWithComputer.png';
 import GuestName from '../formLines/GuestName';
 import GuestTel from '../formLines/GuestTel';
 import GuestMessage from '../formLines/GuestMessage';
 
 const Feedback = () => {
-    
-    function formFill() {
-        if(localStorage.length > 0) {
-            const key = localStorage.key(0);
-            document.getElementById("guestName").value = key;
-            document.getElementById("guestTel").value = localStorage.getItem(key);
-        }
+    const [guestName, setGuestName] = useState('');
+    const [guestTel, setGuestTel] = useState();
+    const [guestMessage, setGuestMessage] = useState('');
+        
+    const inputChangedHandlerTel = (e) => {
+        const updatedTel = e.target.value;
+        if (updatedTel.match(/[0-9]+$/) && updatedTel.length<=12) {
+            setGuestTel(updatedTel);
+        } else { updatedTel.slice(0, -1);}
     }
+   
+    const inputChangedHandlerName = useCallback((e) => {
+        const updatedKeyword = e.target.value;
+        if (updatedKeyword.match(/[А-Яа-яЁё\s]+$/)){
+            setGuestName(updatedKeyword);
+        } else {console.log("error");}
+    }, []);
 
-    function submitMessage(e) {
+    const inputChangedHandlerMessage = useCallback((e) => {
+        const message = e.target.value;
+        setGuestMessage(message);
+    }, []);
+
+    const submitMessage = (e) => {
         e.preventDefault();
-        const name = document.getElementById("guestName").value;
-        const tel = document.getElementById("guestTel").value;
-        if (localStorage.length > 0){
+        if(localStorage.length>0){
             localStorage.clear();
         }
-        localStorage.setItem(name, tel);
-    }
+        localStorage.setItem(guestName,guestTel);
+        const btn = document.getElementById('formSubmit');
+        btn.classList.add('btn_hover');
+    };
 
+    useEffect(() => {
+        const btn = document.getElementById('formSubmit');
+        if(btn.classList.contains('btn_hover') && localStorage.length>0){
+            console.log("Сообщение получено!");
+            btn.classList.remove('btn_hover');
+        }
+    });
+
+
+    
     return(
         <div className="form__container">
             <div className="form__container-left">
@@ -32,12 +57,21 @@ const Feedback = () => {
 
             <div className="form__container-right">
                 <h2>Напишите нам:</h2>
-                <form action="###" onFocus={formFill}>
-                    <GuestName />
-                    <GuestTel />
-                    <GuestMessage />
+                <form>
+                    <GuestName 
+                        guestName={guestName} 
+                        inputChangedHandler={inputChangedHandlerName}
+                    />
+                    <GuestTel 
+                        guestTel={guestTel} 
+                        inputChangedHandler={inputChangedHandlerTel}
+                    />
+                    <GuestMessage 
+                        guestMessage={guestMessage}
+                        inputChangedHandler={inputChangedHandlerMessage}
+                    />
                     <div className="form__row">
-                        <input type="Submit" value="Отправить" id="formSubmit" onSubmit={() => submitMessage}/>
+                        <input className="submit" type="Submit" value="Отправить" id="formSubmit" onClick={submitMessage}/>
                     </div>
                 </form>
             </div>
