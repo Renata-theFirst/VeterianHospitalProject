@@ -12,6 +12,7 @@ const App = () => {
         <Router>
             <AppHeader />
             <Routes>
+                <Route index element={<MainPage/>} />
                 <Route path="/main" element={<MainPage/>}/>
                 <Route path="/price" element={<HospServices />}/>
                 {/* <Route path="/specialists" element={<Specialists />}/> */}

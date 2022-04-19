@@ -39,15 +39,27 @@ const Feedback = () => {
         btn.classList.add('btn_hover');
     };
 
+    /* useEffect(() => {
+        const btn = document.getElementById('formSubmit').classList;
+        const msg = document.getElementById("guestMessage");
+        if(btn.contains('btn_hover')){
+            alert("Сообщение получено!");
+            btn.remove('btn_hover');
+            msg.value = '';
+        };
+    }, [guestMessage]); */
+
     useEffect(() => {
         const btn = document.getElementById('formSubmit');
-        if(btn.classList.contains('btn_hover') && localStorage.length>0){
-            console.log("Сообщение получено!");
-            btn.classList.remove('btn_hover');
-        }
+        btn.addEventListener('click', () => {
+            const msg = document.getElementById("guestMessage");
+            if(btn.classList.contains('btn_hover')){
+                alert("Сообщение получено!");
+                btn.classList.remove('btn_hover');
+                msg.value = '';
+            };
+        })
     });
-
-
     
     return(
         <div className="form__container">
@@ -77,5 +89,7 @@ const Feedback = () => {
             </div>
         </div>
     );
+
+    
 }
 export default Feedback;

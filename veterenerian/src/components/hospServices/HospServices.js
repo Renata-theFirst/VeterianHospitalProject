@@ -1,19 +1,25 @@
 import { getResource } from '../../services/services';
-import './HospServices.css';
+/* import {useEffect, useState} from 'react';
+ */import './HospServices.css';
+ import Advert from '../advertising/Advertising';
 
 const HospServices = () => {
+/*     const [headers,setHeaders] = useState();
+    const [title, setTitle] = useState();
+    const [values,setValues] = useState();
+ */     
     const data = getResource('surgeon/consultation')
     console.log(data);
-    const renderValues = () => {
-        return(
+    
+    function RenderValues() {
+        return (
             <div className="services">
                 <h2>Хирургия</h2>
-                <div>
+                {/* <div>
                     <h3>{data.title}</h3>
                     <div className="table__price">
                         <table>
-                            <tr> {data.headers}
-                            </tr>
+                            <tr>{data.headers}</tr>
                             <tr>
                                 <td>{data.values.title}</td>
                                 <td>{data.values.description}</td>
@@ -21,21 +27,28 @@ const HospServices = () => {
                             </tr>
                         </table>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
-    };
+    }
     
     return(
-        <div className="hosp__services">
-            {renderValues}
-        </div>
-
-    );
+        <>
+            <Advert />
+            <div className="hosp__services">
+                <RenderValues/>
+            </div>
+        </>
+    ); 
 
     
-    
-  /*  return(
+ 
+}
+export default HospServices;
+
+const fan = () => {
+        return(
+  
         <div className="hosp__services">
             <div className="services">
                 <h2>Хирургия</h2>
@@ -2296,7 +2309,6 @@ const HospServices = () => {
                             </tr>
                         </table>
                     </div>
-
 
                     <h3>ПЦР</h3>
                     <div className="table__price">
@@ -5402,6 +5414,5 @@ const HospServices = () => {
                 </div>
             </div>
         </div>
-    );*/
+    );
 }
-export default HospServices;
