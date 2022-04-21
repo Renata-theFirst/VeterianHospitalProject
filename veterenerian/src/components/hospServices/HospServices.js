@@ -1,17 +1,39 @@
 import { getResource } from '../../services/services';
-/* import {useEffect, useState} from 'react';
- */import './HospServices.css';
- import Advert from '../advertising/Advertising';
+import './HospServices.css';
+import Advert from '../advertising/Advertising';
+import { useEffect, useState } from 'react';
 
 const HospServices = () => {
-/*     const [headers,setHeaders] = useState();
-    const [title, setTitle] = useState();
-    const [values,setValues] = useState();
- */     
-    const data = getResource('surgeon/consultation')
-    console.log(data);
+    const [list, setList] = useState();
+    useEffect(() => {
+        const data = getResource('tabs')
+        .then(res => {updateList(res); console.log('++',res);})
+        console.log(data);
+    }, []); 
+
+    const updateList = (res) => {
+        console.log('res + ',res)
+        let item = [];
+        for(let key in res){
+            console.log('key: ', key);
+            let list = res[key].title;
+            item.push(list);
+        }
+
+        const renderList = item.map(el => {
+            console.log('itemRender: ', item)
+            return(
+                <div className="services">
+                    <h2>{el}</h2>
+                </div>
+            );
+        });
+        setList(renderList);
+    }; 
     
-    function RenderValues() {
+    
+
+    /* function RenderValues() {
         return (
             <div className="services">
                 <h2>Хирургия</h2>
@@ -27,16 +49,16 @@ const HospServices = () => {
                             </tr>
                         </table>
                     </div>
-                </div> */}
+                </div> 
             </div>
         );
-    }
+    } */
     
     return(
         <>
             <Advert />
             <div className="hosp__services">
-                <RenderValues/>
+                {list}
             </div>
         </>
     ); 

@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+
 /* import * as dataService from "../serverInfo.json";*/
 const dataService = require("../serverInfo.json");
 const postData = async (url, data) => {
@@ -11,19 +13,25 @@ const postData = async (url, data) => {
     return await res.json();
 };
 
-/* async function getResource(url) {
-    let res = await fetch(url);
-    if (!res.ok) {
-        throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-    }
-    return await res.json();
-
-} */
-
 async function getResource(url) {
     const routeParts = url.split('/');
-    return dataService.tabs[routeParts[0]][routeParts[1]];
+    return dataService[routeParts[0]];
 }
 
 export {postData};
 export {getResource};
+
+export const useUrl = () => {
+    const request = useCallback(async (url, method = 'GET', body = null, headers = {'Content-Type': 'application/json'}) => {
+        try{
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Could not fetch ${url}, status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data;
+        } catch (e) {
+            throw e;
+        }
+    }, []);
+}
