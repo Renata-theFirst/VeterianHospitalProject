@@ -17,8 +17,12 @@ class Advert extends Component {
     };
     
     updateAdv = () => {
-        this.setState({img:`${slider1}` ? `${slider2}`: `${slider1}`}); 
-        this.setState({text:'Повторный прием специалиста со скидкой 20%'? 'Наша клиника работает круглосуточно':'Повторный прием специалиста со скидкой 20%'})
+        this.setState({
+            img:`${slider1}` ? `${slider2}`: `${slider1}`,
+            text:'Повторный прием специалиста со скидкой 20%'? 
+                        'Наша клиника работает круглосуточно'
+                        :'Повторный прием специалиста со скидкой 20%'
+        }); 
         console.log("I'm here!")
     };
     
@@ -34,7 +38,7 @@ class Advert extends Component {
                 padding: 'auto'
             }}>
                 <img 
-                    src={this.state.img} 
+                    src={this.state.img}
                     style={{
                         display:'flex', 
                         width:'1000px',
@@ -49,12 +53,11 @@ class Advert extends Component {
                         display: 'block',
                         margin:'-150px 0 0 320px',
                         width: '400px',
-                        height:'auto',
+                        height:'150px',
                         fontFamily:'sans-serif',
                         fontWeight: 'bold',
                         fontSize:'2em',
                         color:'rgba(0, 51, 102, .7)'
-                    
                     }}
                 >
                     {this.state.text}
