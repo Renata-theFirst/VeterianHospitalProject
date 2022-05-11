@@ -1,4 +1,9 @@
-const GuestTel:React.FC<{guestTel:string, inputChangedHandler:React.ChangeEventHandler}> = ({guestTel, inputChangedHandler}) => {
+interface IProps {
+    guestTel: string,
+    inputChangedHandler:React.ChangeEventHandler
+}
+
+const GuestTel = ({guestTel, inputChangedHandler}:IProps) =>  {
     return(
         <div className="form__row">
             <label htmlFor="guestTel">

@@ -1,11 +1,10 @@
-export{};
-/* import { getResource } from '../../services/services';
+ //import { getResource } from '../../services/services';
 import './HospServices.css';
-import Advert from '../advertising/Advertising';
-import { useEffect, useState } from 'react';
+//import Advert from '../advertising/Advertising';
+//import { useEffect, useState } from 'react';
 
  const HospServices = () => {
-    const [list, setList] = useState([]);
+    /* const [list, setList] = useState([]);
     useEffect(() => {
         const data = getResource('tabs')
         .then(res => {updateList(res); console.log('++',res);})
@@ -30,15 +29,15 @@ import { useEffect, useState } from 'react';
             );
         });
         setList(renderList);
-    };   */
+    };   
     
     
 
-    /* function RenderValues() {
+     function RenderValues() {
         return (
             <div className="services">
                 <h2>Хирургия</h2>
-                {/* <div>
+                <div>
                     <h3>{data.title}</h3>
                     <div className="table__price">
                         <table>
@@ -53,21 +52,21 @@ import { useEffect, useState } from 'react';
                 </div> 
             </div>
         );
-    } */
+    } 
     
-    /* return(
+     return(
         <>
             <Advert />
             <div className="hosp__services">
                 {list}
             </div>
         </>
-    ); 
+    );  */
 
     
  
-} */
-/* export default HospServices; */
+} 
+ export default HospServices; 
 
 /* const fan = () => {
         return(

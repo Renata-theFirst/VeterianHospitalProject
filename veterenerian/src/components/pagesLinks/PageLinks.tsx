@@ -9,7 +9,7 @@ const PageLinks = () => {
     };
     type MenuTabs = Tab[];
     const menuTabs: MenuTabs = [
-        {link: '/main', label: 'Главная'},
+        {link: '/', label: 'Главная'},
         {link: '/price', label: 'Услуги и цены'},
         {link: '/specialists', label: 'Специалисты'},
         {link: '/news', label: 'Новости'},

@@ -8,10 +8,10 @@ import smartDog from './dogWithComputer.png';
 
 const Feedback = () => {
     
-    const [guestName, setGuestName] = useState('');
-    const [guestTel, setGuestTel] = useState('');
-    const [guestMessage, setGuestMessage] = useState('');
-        
+    const [guestName, setGuestName] = useState<string>('');
+    const [guestTel, setGuestTel] = useState<string>('');
+    const [guestMessage, setGuestMessage] = useState<string>('');
+
     const inputChangedHandlerTel = (e:React.ChangeEvent<HTMLInputElement>) => {
          const updatedTel = e.target.value;
         if (updatedTel.match(/[0-9]+$/) && updatedTel.length<=12) {

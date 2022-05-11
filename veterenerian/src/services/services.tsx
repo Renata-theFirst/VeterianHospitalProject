@@ -1,7 +1,8 @@
-export{};
-/* import { useCallback } from "react";
+ export {};
+ //import { useCallback } from "react";
 
-import * as dataService from "../serverInfo.json";
+/* import * as dataService from "../serverInfo.json";
+
 const dataService = require("../serverInfo.json");
 const postData = async (url, data) => {
     let res = await fetch(url, {
@@ -20,9 +21,9 @@ async function getResource(url) {
 }
 
 export {postData};
-export {getResource};
+export {getResource}; */
 
-export const useUrl = () => {
+/* export const useUrl = () => {
     const request = useCallback(async (url, method = 'GET', body = null, headers = {'Content-Type': 'application/json'}) => {
         try{
             const response = await fetch(url);
@@ -35,4 +36,4 @@ export const useUrl = () => {
             throw e;
         }
     }, []);
-} */
+}  */

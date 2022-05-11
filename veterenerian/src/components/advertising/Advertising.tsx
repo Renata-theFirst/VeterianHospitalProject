@@ -1,7 +1,8 @@
-import {Component} from 'react';
+export {} ;
 
-/*const slider1 = require( './img/slider1.jpg');
-const slider2 = require('./img/slider2.jpg');
+/* import {Component} from 'react';
+import slider1 from './img/slider1.jpg';
+import slider2 from './img/slider2.jpg';
 
 class Advert extends Component {
     state={
@@ -34,7 +35,6 @@ class Advert extends Component {
                 flexDirection: 'column',
                 justifyContent:'center',
                 width:'auto',
-                heigh: 'auto',
                 margin: 'auto',
                 padding: 'auto'
             }}>
@@ -69,4 +69,4 @@ class Advert extends Component {
     }
 }
 
-export default Advert; */
+export default Advert;  */

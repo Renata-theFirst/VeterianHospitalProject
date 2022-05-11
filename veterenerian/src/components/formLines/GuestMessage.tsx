@@ -1,4 +1,9 @@
-const GuestMessage: React.FC<{guestMessage: string, inputChangedHandler: React.ChangeEventHandler}> = ({guestMessage, inputChangedHandler}) => {
+interface IProps {
+    guestMessage: string,
+    inputChangedHandler:React.ChangeEventHandler
+}
+
+const GuestMessage =({guestMessage, inputChangedHandler}:IProps) => {
     return(
         <div className="form__row">
             <label htmlFor="guestMessage">
