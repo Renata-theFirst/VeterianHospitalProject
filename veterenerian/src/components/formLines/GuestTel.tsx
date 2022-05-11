@@ -1,5 +1,4 @@
-const GuestTel = (props:any) => {
-    const {guestTel, inputChangedHandler} = props;
+const GuestTel:React.FC<{guestTel:string, inputChangedHandler:React.ChangeEventHandler}> = ({guestTel, inputChangedHandler}) => {
     return(
         <div className="form__row">
             <label htmlFor="guestTel">

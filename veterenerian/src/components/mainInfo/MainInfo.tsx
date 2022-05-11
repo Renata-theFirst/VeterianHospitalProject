@@ -16,7 +16,7 @@ const MainInfo = () => {
 
     const renderList = serviceList.map((item, i) => {
         return(
-            <li key={`li-`+{i}}> 
+            <li key={`li-${i}`}> 
                 {item}
             </li>
         );

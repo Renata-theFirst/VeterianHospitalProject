@@ -1,6 +1,4 @@
-const GuestMessage = (props:any) => {
-    const {guestMessage, inputChangedHandler} = props;
-
+const GuestMessage: React.FC<{guestMessage: string, inputChangedHandler: React.ChangeEventHandler}> = ({guestMessage, inputChangedHandler}) => {
     return(
         <div className="form__row">
             <label htmlFor="guestMessage">
