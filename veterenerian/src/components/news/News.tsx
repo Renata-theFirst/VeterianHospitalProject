@@ -1,5 +1,5 @@
-import './News.css'
-import React from 'react';
+ import './News.css'
+/*import React from 'react';
  
 
 class News extends React.Component {
@@ -27,4 +27,4 @@ article.forEach((elem) => {
 export default News;
 
 
-
+ */

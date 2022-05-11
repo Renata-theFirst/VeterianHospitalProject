@@ -1,8 +1,8 @@
-const GuestName = (props) => {
+const GuestName = (props:any) => {
     const {guestName, inputChangedHandler} = props;
     return( 
         <div className="form__row">
-            <label for="guestName">
+            <label htmlFor="guestName">
                 Ваше имя:
             </label>
             <input 

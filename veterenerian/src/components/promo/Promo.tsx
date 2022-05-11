@@ -1,4 +1,5 @@
 import './Promo.css';
+
 import doctor from './doctor.png';
 
 const Promo = () => {
@@ -13,7 +14,7 @@ const Promo = () => {
                 </div>
 
                 <div>
-                    <img src={doctor}  alt="Veterenerian And Dog"/>
+                  <img src={doctor}  alt="Veterenerian And Dog"/> 
                 </div>
             </div>
         </>

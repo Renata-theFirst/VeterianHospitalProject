@@ -1,6 +1,6 @@
-import Promo from "../promo/Promo";
-import MainInfo from "../mainInfo/MainInfo";
 import Feedback from "../feedback/FeedbackForm";
+import MainInfo from "../mainInfo/MainInfo";
+import Promo from "../promo/Promo";
 
 const MainPage = () => {
     return(

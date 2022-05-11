@@ -5,13 +5,13 @@ const Specialists = () => {
 
     return(
         <div>
-            <h2 class="hosp__docs_header">Врачи нашей клиники</h2> 
-            <div class="hosp__docs_wrapper">
-                <div class="hosp__docs" id="docs">
+            <h2 className="hosp__docs_header">Врачи нашей клиники</h2> 
+            <div className="hosp__docs_wrapper">
+                <div className="hosp__docs" id="docs">
                     {/* <DocCard/> */}
                 </div>
     
-                <div class="hosp__manag">
+                <div className="hosp__manag">
                 </div>
             </div>
         </div>

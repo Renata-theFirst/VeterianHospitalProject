@@ -1,9 +1,9 @@
-const GuestMessage = (props) => {
+const GuestMessage = (props:any) => {
     const {guestMessage, inputChangedHandler} = props;
 
     return(
         <div className="form__row">
-            <label for="guestMessage">
+            <label htmlFor="guestMessage">
                 Сообщение:
             </label>
             <input 

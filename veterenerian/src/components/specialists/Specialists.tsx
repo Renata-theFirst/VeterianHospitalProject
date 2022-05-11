@@ -1,11 +1,12 @@
-// import React from 'react';
-// class DocCard {
-//     constructor(src, name, qualification) {
-//         this.src = src;
-//         this.name = name;
-//         this.qualification = qualification;
-//         this.parent = document.querySelector(".hosp__docs");
-//     }
+import /* React, */ { Component } from 'react';
+
+class DocCard extends Component{
+    /* constructor(src:string, name:string, qualification:string) {
+        this.src = src;
+        this.name = name;
+        this.qualification = qualification;
+        this.parent = document.querySelector(".hosp__docs");
+    } */
 
 //     render() {
 //         const card = document.createElement('div');
@@ -28,7 +29,7 @@
 //         this.src = this.src ? this.src : './pics/doctors/noImage.jpg';
 //         this.parent = document.querySelector(".hosp__manag");
 //     }
-// }
+}
 
 // new Director(
 //    './pics/doctors/surgeon.jpg',
@@ -90,3 +91,4 @@
 //     new DocCard(...item).render();
 // })
 // export default Specialists;
+export default DocCard

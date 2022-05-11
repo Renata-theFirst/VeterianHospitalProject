@@ -1,4 +1,5 @@
 import './Footer.css';
+
 import fb from './icons/facebook.svg';
 import inst from './icons/instagram.svg';
 import vk from './icons/vk.svg';
@@ -22,13 +23,13 @@ const Footer = () => {
             
             <div className="info">
                 <a href="https://www.facebook.com/">
-                    <img src={fb} alt="facebook"/>
+                    <img src={fb} alt="fb"/>
                 </a>
                 <a href="https://www.instagram.com/">
-                    <img  src={inst} alt="instagram"/>
+                    <img  src={inst} alt="inst"/>
                 </a>
                 <a href="https://www.vkontakte.ru/">
-                    <img src={vk} alt="vkontakte"/>
+                    <img src={vk} alt="vk"/>
                 </a>
             </div>
 

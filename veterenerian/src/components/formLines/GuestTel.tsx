@@ -1,8 +1,8 @@
-const GuestTel = (props) => {
+const GuestTel = (props:any) => {
     const {guestTel, inputChangedHandler} = props;
     return(
         <div className="form__row">
-            <label for="guestTel">
+            <label htmlFor="guestTel">
                 Телефон:
             </label>
             <input 
