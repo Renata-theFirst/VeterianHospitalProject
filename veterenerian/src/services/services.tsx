@@ -1,9 +1,7 @@
- export {};
  //import { useCallback } from "react";
+const dataService = require ("../serverInfo.json");
 
-/* import * as dataService from "../serverInfo.json";
-
-const dataService = require("../serverInfo.json");
+/* const dataService = require("../serverInfo.json");
 const postData = async (url, data) => {
     let res = await fetch(url, {
         method: "POST",
@@ -13,15 +11,18 @@ const postData = async (url, data) => {
         body: data
     });
     return await res.json();
-};
-
-async function getResource(url) {
-    const routeParts = url.split('/');
-    return dataService[routeParts[0]];
+}; */
+interface IDataService{
+    [key:string]:any    
 }
 
-export {postData};
-export {getResource}; */
+async function getResource(url: string){
+    const routeParts = url.split('/').pop()||'';
+    return (dataService as IDataService)[routeParts]
+} 
+
+//export {postData};
+ export {getResource}; 
 
 /* export const useUrl = () => {
     const request = useCallback(async (url, method = 'GET', body = null, headers = {'Content-Type': 'application/json'}) => {
