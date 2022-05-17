@@ -1,5 +1,5 @@
  //import { useCallback } from "react";
-const dataService = require ("../serverInfo.json");
+const dataService = require ("../serverInfo2.json");
 
 /* const dataService = require("../serverInfo.json");
 const postData = async (url, data) => {
