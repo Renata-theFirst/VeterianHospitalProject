@@ -1,7 +1,8 @@
+import { useContext, useEffect, useState } from 'react';
 import {getResource} from '../../services/services';
 import './HospServices.css';
 //import Advert from '../advertising/Advertising';
-import {useEffect, useState} from 'react';
+import { ThemeContext } from './themeButton/ThemeContext';
 
 interface ITabValues{
     title: string;
@@ -25,7 +26,8 @@ export interface IServices{
 
 export const HospServices = () => {
     const [data, setData] = useState<IServices | null>(null);
-       
+    const {theme} = useContext(ThemeContext);
+
     useEffect(() => {
         getResource('http://fake/data/api/tabs')
         .then(res => { 
@@ -85,18 +87,29 @@ export const HospServices = () => {
     } 
 
     if(data){
-        let rDataService = [];
+        let rDataService: any = [];
         for(let key in data){
             rDataService.push(RenderValues(data[key], data[key].title));
         };
 
         return (
-            <div className="hosp__services">
-                {rDataService}
-            </div>
+        <div className="hosp__services" style={theme}>
+            {rDataService}
+        </div> 
         );
     }
 
     else{ return(<div></div>);}
 } 
     
+/* return (
+    <ThemeContext.Consumer >
+        {({theme}) => {
+            return(
+                <div className="hosp__services" style={theme}>
+                    {rDataService}
+                </div> 
+            );
+        }}
+    </ThemeContext.Consumer>
+); */
