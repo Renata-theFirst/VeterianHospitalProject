@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {getResource} from '../../services/services';
 import './HospServices.css';
-//import Advert from '../advertising/Advertising';
-import { ThemeContext } from './themeButton/ThemeContext';
-
+import { getThemeByName, useTheme } from './themeButton/themeContext';
 interface ITabValues{
     title: string;
     description: string;
@@ -19,14 +17,12 @@ export interface IMedicalServices{
     consultation: IUniqObject;
     procedures: IUniqObject;
 } 
-
 export interface IServices{
     [key : string] : IMedicalServices;
 } 
 
 export const HospServices = () => {
     const [data, setData] = useState<IServices | null>(null);
-    const {theme} = useContext(ThemeContext);
 
     useEffect(() => {
         getResource('http://fake/data/api/tabs')
@@ -86,6 +82,8 @@ export const HospServices = () => {
         );
     } 
 
+    const {state} = useTheme();
+
     if(data){
         let rDataService: any = [];
         for(let key in data){
@@ -93,7 +91,7 @@ export const HospServices = () => {
         };
 
         return (
-        <div className="hosp__services" style={theme}>
+        <div className="hosp__services" style={getThemeByName(state.currentTheme)}>
             {rDataService}
         </div> 
         );
@@ -101,15 +99,3 @@ export const HospServices = () => {
 
     else{ return(<div></div>);}
 } 
-    
-/* return (
-    <ThemeContext.Consumer >
-        {({theme}) => {
-            return(
-                <div className="hosp__services" style={theme}>
-                    {rDataService}
-                </div> 
-            );
-        }}
-    </ThemeContext.Consumer>
-); */

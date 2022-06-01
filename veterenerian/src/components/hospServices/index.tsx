@@ -1,13 +1,9 @@
 import { HospServices } from "./HospServices";
-import { ThemeProvider } from "./themeButton/themeProvider";
-/* import {  themeData, ThemeContext } from "./themeButton/ThemeContext"; */
+import  {ThemeProvider}  from "./themeButton/themeContext";
 import ThemeTogglerButton from "./themeButton/themeToggleButton";
 
 const Services = () => {
-
-
     return(
-        
         <ThemeProvider>
             <div className="tab_big">
                 <ThemeTogglerButton/>
@@ -18,11 +14,3 @@ const Services = () => {
 }
 export default Services;
 
-/* return(
-    <ThemeContext.Provider value ={themeData}>
-        <div className="tab_big">
-            <ThemeTogglerButton/>
-        </div>
-        <HospServices/>
-    </ThemeContext.Provider> 
-); */

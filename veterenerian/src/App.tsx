@@ -7,7 +7,6 @@ import MainPage from './components/pagesLinks/mainPage';
 import Services from './components/hospServices/index'
 import Specialists from './components/specialists';
 import React from 'react';
-//import News from './components/news/News';
 
 const App = () => {
     return(

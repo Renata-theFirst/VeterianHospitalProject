@@ -1,8 +1,9 @@
-import { useState } from "react";
-import ThemeContext, { themes } from "./ThemeContext";
+export{};
+/* import { useState } from "react";
+import {ThemeContext, themes } from "./themeContext";
 
 type ProviderProps = {children: React.ReactNode}
-export const ThemeProvider = ({children}:ProviderProps) => {
+const ThemeProvider = ({children}:ProviderProps) => {
     const [theme, setTheme] = useState(themes.normal);
     const setNormalTheme = () => setTheme(themes.normal);
     const setBigTheme = () => setTheme(themes.big);
@@ -13,3 +14,5 @@ export const ThemeProvider = ({children}:ProviderProps) => {
         </ThemeContext.Provider>
     );
 };
+
+export default ThemeProvider; */
