@@ -1,22 +1,4 @@
-/* import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-
-export const store = configureStore({
-    reducer: {
-      //counter: counterReducer,
-    },
-  });
-  
-  export type AppDispatch = typeof store.dispatch;
-  export type RootState = ReturnType<typeof store.getState>;
-  export type AppThunk<ReturnType = void> = ThunkAction<
-    ReturnType,
-    RootState,
-    unknown,
-    Action<string>
-  >; */
-
-
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit'
 
 interface Theme {
   color:string;
@@ -31,7 +13,7 @@ interface ThemePalete {
   big='big', normal='normal'
 } 
 
-interface State {currentTheme:ThemeNames}
+interface State {currentTheme:ThemeNames, balance:number, busy: boolean}
 
 const ThemePaleteData:ThemePalete ={
   [ThemeNames.big]:{
@@ -48,27 +30,53 @@ export function getThemeByName(name:ThemeNames):Theme {
   return ThemePaleteData[name];
 }
 
+function timeout(ms:number)
+ {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+export const LoadBalance = createAsyncThunk(
+  'sets/async',
+  async () => {
+    await timeout(3000);
+    return {balance:5000, busy:false};
+  }
+)
+const LoadBalancePending = (state:State) => {Object.assign(state,{busy:true})};
+const LoadBalanceRejected = (state:State) => {Object.assign(state,{busy:false})};
+const LoadBalanceFulfilled = (state:State, action:any) => {
+  Object.assign(state, action.payload);
+  
+}
+const initState: State = {
+  currentTheme:ThemeNames.normal,
+  balance:0,
+  busy:false,
+}
 const themeSlice = createSlice({
-  name: 'currentTheme',
-  initialState: {
-    currentTheme:ThemeNames.big
-  },
+  name: 'sets',
+  initialState: initState,
   reducers: {
-    toggle: (state:State) => {
+    toggle:(state:State) => {
       if(state.currentTheme === ThemeNames.big) {
-        return {currentTheme:ThemeNames.normal}
+        return {...state, currentTheme:ThemeNames.normal}
       } else {
-        return {currentTheme:ThemeNames.big}
+        return {...state, currentTheme:ThemeNames.big}
       }
     }
+  },
+  extraReducers:{
+    [String(LoadBalance.pending)]:LoadBalancePending,
+    [String(LoadBalance.rejected)]:LoadBalanceRejected,
+    [String(LoadBalance.fulfilled)]:LoadBalanceFulfilled,
   }
 }) 
 
-  
-export const { toggle } = themeSlice.actions
+export const { actions } = themeSlice;
 
 export const store = configureStore({
-  reducer: themeSlice.reducer
+  reducer: {sets: themeSlice.reducer}
 })
 
 

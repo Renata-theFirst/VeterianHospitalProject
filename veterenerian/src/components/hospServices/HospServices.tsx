@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import {getResource} from '../../services/services';
 import './HospServices.css';
-import { store, getThemeByName } from '../store/store';
+import { useSelector } from 'react-redux';
+import { getThemeByName } from '../store/store';
 interface ITabValues{
     title: string;
     description: string;
@@ -85,7 +86,9 @@ export const HospServices = () => {
             </div> 
         );
     } 
-    console.log(getThemeByName(store.getState().currentTheme));
+
+    const currentTheme = useSelector((state:any) => state.sets.currentTheme);
+
     if(data){
         let rDataService: any = [];
         for(let key in data){
@@ -93,7 +96,7 @@ export const HospServices = () => {
         };
 
         return (
-        <div className="hosp__services" style={getThemeByName(store.getState().currentTheme)}>
+        <div className="hosp__services" style={getThemeByName(currentTheme)}>
             {rDataService}
         </div> 
         );

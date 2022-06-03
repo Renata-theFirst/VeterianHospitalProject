@@ -1,16 +1,27 @@
-import { store } from "../../store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, LoadBalance } from "../../store/store";
 
 const ThemeTogglerButton = () => {
-
+  const dispatch = useDispatch();
+  const {busy, balance} = useSelector((state:any) => state.sets);
+  const balanceTitle = busy? 'working...': `balance: ${balance}$`
   return (
-    <div>
-      <button
-        className="button_big"
-        onClick={() => (store.dispatch({type:'toggle'}))}
-      >
-        Версия для слабовидящих
-      </button>
-    </div>
+    <>
+      <div className="tab_big">
+        <button
+          className="button_big"
+          onClick={() => dispatch(actions.toggle())}
+        >
+          Версия для слабовидящих
+        </button>
+        <button 
+          className="button_big"
+          onClick={() =>dispatch(LoadBalance() as any)}
+        >
+          {balanceTitle}
+        </button>
+      </div>
+    </>
   );
 };
 
