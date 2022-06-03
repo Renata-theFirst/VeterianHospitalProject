@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {getResource} from '../../services/services';
 import './HospServices.css';
-import { getThemeByName, useTheme } from './themeButton/themeContext';
+import { store, getThemeByName } from '../store/store';
 interface ITabValues{
     title: string;
     description: string;
@@ -58,32 +58,34 @@ export const HospServices = () => {
                     <h3>{data.consultation.title}</h3>
                     <div className="table__price">
                         <table>
-                            <tr>
-                                <td>{data.consultation.headers[0]}</td>
-                                <td>{data.consultation.headers[1]}</td>
-                                <td>{data.consultation.headers[2]}</td>
-                            </tr>
-                            {tab1}
+                            <tbody>
+                                <tr>
+                                    <td>{data.consultation.headers[0]}</td>
+                                    <td>{data.consultation.headers[1]}</td>
+                                    <td>{data.consultation.headers[2]}</td>
+                                </tr>
+                                {tab1}
+                            </tbody>
                         </table>   
                     </div>
                     <h3>{data.procedures.title}</h3>
                     <div className="table__price">
                         <table>
-                            <tr>
-                                <td>{data.procedures.headers[0]}</td>
-                                <td>{data.procedures.headers[1]}</td>
-                                <td>{data.procedures.headers[2]}</td>
-                            </tr>
-                            {tab2}
+                            <tbody>
+                                <tr>
+                                    <td>{data.procedures.headers[0]}</td>
+                                    <td>{data.procedures.headers[1]}</td>
+                                    <td>{data.procedures.headers[2]}</td>
+                                </tr>
+                                {tab2}
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div> 
         );
     } 
-
-    const {state} = useTheme();
-
+    console.log(getThemeByName(store.getState().currentTheme));
     if(data){
         let rDataService: any = [];
         for(let key in data){
@@ -91,7 +93,7 @@ export const HospServices = () => {
         };
 
         return (
-        <div className="hosp__services" style={getThemeByName(state.currentTheme)}>
+        <div className="hosp__services" style={getThemeByName(store.getState().currentTheme)}>
             {rDataService}
         </div> 
         );

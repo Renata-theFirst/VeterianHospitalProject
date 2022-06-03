@@ -1,13 +1,12 @@
-import { useTheme } from "./themeContext";
+import { store } from "../../store/store";
 
 const ThemeTogglerButton = () => {
-  const {dispatch} = useTheme()
 
   return (
     <div>
       <button
         className="button_big"
-        onClick={() => (dispatch({type:'toggle'}))}
+        onClick={() => (store.dispatch({type:'toggle'}))}
       >
         Версия для слабовидящих
       </button>
